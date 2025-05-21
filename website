@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Mental Health Canada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #34495e;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .quiz {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Teen Mental Health Canada</h1>
+    <p>Resources, tips, and support for Canadian teens</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tips">Wellness Tips</a>
+    <a href="#quiz">Check-In Quiz</a>
+    <a href="#strategies">Strategies</a>
+    <a href="#resources">Resources</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About This Site</h2>
+      <p>This website was created to raise awareness about teen mental health in Canada. Many students struggle silently with stress, anxiety, or depression. Here, you'll find support, practical tools, and links to professional help.</p>
+    </section>
+
+    <section id="tips">
+      <h2>Daily Wellness Tips</h2>
+      <ul>
+        <li>Take 5-minute breaks during homework.</li>
+        <li>Try to sleep 8–9 hours each night.</li>
+        <li>Limit social media before bed.</li>
+        <li>Talk to someone you trust when things feel heavy.</li>
+        <li>Stay active: walks, sports, or even stretching helps.</li>
+      </ul>
+    </section>
+
+    <section id="quiz">
+      <h2>Quick Mental Health Check-In</h2>
+      <div class="quiz">
+        <p>How often do you feel overwhelmed by school or social life?</p>
+        <select id="stressLevel">
+          <option value="0">Almost never</option>
+          <option value="1">Sometimes</option>
+          <option value="2">Often</option>
+          <option value="3">Almost every day</option>
+        </select>
+
+        <p>How well are you sleeping most nights?</p>
+        <select id="sleepQuality">
+          <option value="0">Very well</option>
+          <option value="1">Okay</option>
+          <option value="2">Not great</option>
+          <option value="3">Poorly</option>
+        </select>
+
+        <p>How often do you talk to someone when you're stressed?</p>
+        <select id="supportUse">
+          <option value="0">Often</option>
+          <option value="1">Sometimes</option>
+          <option value="2">Rarely</option>
+          <option value="3">Never</option>
+        </select>
+
+        <button onclick="calculateCheckIn()">Get Feedback</button>
+        <p id="result"></p>
+      </div>
+    </section>
+
+    <section id="strategies">
+      <h2>Coping Strategies</h2>
+      <h3>If you're feeling stressed:</h3>
+      <ul>
+        <li>Take a short break from what you're doing and go for a walk.</li>
+        <li>Try deep breathing or meditation for 5 minutes.</li>
+        <li>Write down your thoughts to clear your mind.</li>
+      </ul>
+
+      <h3>If you're feeling sad or low:</h3>
+      <ul>
+        <li>Talk to someone — a friend, family member, or counselor.</li>
+        <li>Listen to music or do something small that brings you comfort.</li>
+        <li>Remind yourself this feeling won't last forever.</li>
+      </ul>
+
+      <h3>If you're feeling anxious:</h3>
+      <ul>
+        <li>Try the 5-4-3-2-1 grounding technique (use your senses).</li>
+        <li>Limit caffeine and get some fresh air.</li>
+        <li>Focus on what you can control in the moment.</li>
+      </ul>
+
+      <p><strong>⚠️ If you ever feel like you're in a crisis or things are too overwhelming, talk to someone immediately.</strong></p>
+      <ul>
+        <li><strong>Kids Help Phone (Canada):</strong> 1-800-668-6868 or text CONNECT to 686868</li>
+        <li><strong>9-8-8 Suicide Crisis Helpline:</strong> Call or text 9-8-8 (24/7 support across Canada)</li>
+        <li><strong>Distress Centres of Greater Toronto:</strong> 416-408-4357 (24/7 support)</li>
+        <li><strong>In emergencies, always call:</strong> 911</li>
+      </ul>
+    </section>
+
+    <section id="resources">
+      <h2>Support Resources (Canada)</h2>
+      <ul>
+        <li><a href="https://kidshelpphone.ca/" target="_blank">Kids Help Phone</a> – 24/7 phone and text support for youth.</li>
+        <li><a href="https://www.cmha.ca/" target="_blank">Canadian Mental Health Association</a></li>
+        <li><a href="https://wellnesstogether.ca/" target="_blank">Wellness Together Canada</a> – Free mental health tools and counselling.</li>
+        <li><a href="https://www.dcogt.com/" target="_blank">Distress Centres of Greater Toronto</a> – 24/7 crisis support line: 416-408-4357</li>
+        <li><a href="https://988.ca/" target="_blank">9-8-8 Suicide Crisis Helpline</a> – Available anytime by calling or texting 9-8-8</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for Canadian teens | Mental Health Awareness</p>
+  </footer>
+
+  <script>
+    function calculateCheckIn() {
+      const stress = parseInt(document.getElementById("stressLevel").value);
+      const sleep = parseInt(document.getElementById("sleepQuality").value);
+      const support = parseInt(document.getElementById("supportUse").value);
+
+      const score = stress + sleep + support;
+
+      let message = "";
+      if (score <= 2) {
+        message = "You're doing well overall, but it's always good to keep checking in with yourself.";
+      } else if (score <= 5) {
+        message = "You might be feeling a bit off — try small changes like more rest or reaching out to someone.";
+      } else {
+        message = "You may be struggling. Consider talking to a counselor, teacher, or someone you trust. In severe cases, contact Kids Help Phone (1-800-668-6868), Distress Centres of Greater Toronto (416-408-4357), 9-8-8 Suicide Crisis Helpline, or call 911 in emergencies.";
+      }
+
+      document.getElementById("result").textContent = message;
+    }
+  </script>
+</body>
+
+</html>
